@@ -26,7 +26,7 @@ COPY --from=builder --chown=nodeuser:nodejs /app/src ./src
 COPY --from=builder --chown=nodeuser:nodejs /app/prisma ./prisma
 COPY --from=builder --chown=nodeuser:nodejs /app/prisma.config.ts ./
 
-USER noderuser
+USER nodeuser
 
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:4000/health || exit 1
