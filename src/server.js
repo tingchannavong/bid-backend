@@ -52,6 +52,7 @@ app.use("/api/products", productRoutes);
 app.use("/api/auctions", auctionRoutes);
 app.use("/api/bids", bidRoutes);
 app.use("/api/payments", paymentRoutes);
+app.get('/health', (req, res) => res.status(200).send('ok'));
 
 app.use(notFound);
 
